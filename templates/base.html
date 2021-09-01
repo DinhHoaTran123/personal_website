@@ -1,0 +1,115 @@
+<!-- Base template for every page -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/custom_css/hov.css" rel="stylesheet">
+</head>
+
+<title>{% block title %} Thanh Phat Lam {%endblock%}</title>
+<body>
+<!-- Begin Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+        <!--Icon on the left navbar-->
+        <img src="/static/icons/home.png" width="30" height="30"/>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!--Item in the navbar-->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- About -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about">About</a>
+                </li>
+                <!-- Skills -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/skills">Skills</a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/projects">Projects</a>
+                </li>
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Content  -->
+{% block content %}
+{%endblock%}
+
+<!-- Begin Footer -->
+<footer class="footer">
+    <div class="footer-items row">
+        <!--Page redirect-->
+        <div class="page-direct col">
+            <ul class="navbar-nav">
+                <!-- About -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about">About</a>
+                </li>
+                <!-- Skills -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/skills">Skills</a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/projects">Projects</a>
+                </li>
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+        <!--Social Media -->
+        <div class="social-media col row col-md-auto">
+            <!--Facebook-->
+            <div class="social-media-facebook col">
+                <a href="/social-media-facebook">
+                    <img src="https://img.icons8.com/glyph-neue/64/000000/facebook-new.png"/>
+                </a>
+            </div>
+            <!--Instagram-->
+            <div class="social-media-instagram col">
+                <a href="/social-media-instagram">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/instagram--v1.png" />
+                </a>
+            </div>
+            <!--Linkedin-->
+            <div class="social-media-linkedin col">
+                <a href="/social-media-linkedin">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"/>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</body>
+</html>
