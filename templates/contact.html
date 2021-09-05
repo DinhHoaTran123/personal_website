@@ -1,6 +1,66 @@
 {% extends "base.html" %}
-{% block title %}HomePage {%endblock%}
 
+<head>
+    {% block title %}Contact {%endblock%}
+    {%block head%}
+    <link rel="stylesheet" href="{{ url_for('static',
+                                   filename='css/custom_css/form.css') }}">
+    <script src="{{ url_for('static',filename='js/custom_js/modal.js') }}"></script>
+
+    {%endblock%}
+</head>
 {% block content %}
-<h1> Test Contact</h1>
+
+<div class="wrapper">
+    <div class="overlay">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-9">
+                <div class="contact-us text-center">
+                    <!--Headline-->
+                    <h3 id="h3">Want To Connect ?</h3>
+                    <!--Text-->
+                    <p class="mb-5">Lorem ipsum is placeholder text commonly used in the graphic, print, and
+                        publishing industries for previewing layouts and visual mockups.</p>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="text-center px-1">
+
+                    <div class="forms p-4 py-5 bg-white">
+                        <!--Start Form-->
+                        <h5>Send Message</h5>
+                        <form method="POST">
+                            <div class="mt-4 inputs">
+                                <!--Get Name-->
+                                <input type="text" class="form-control" name="Name"
+                                       placeholder="Name">
+                                <!--Get Email-->
+                                <input type="email" name="Email"
+                                       class="form-control"
+                                       placeholder="Email">
+                                <!--Get Message-->
+                                <textarea class="form-control"
+                                          name="Message"
+                                          placeholder="Your Message"></textarea>
+                            </div>
+                            <!--Submit Button-->
+                            <div class="button mt-4 text-left" id="Modal-Btn">
+                                <button type="submit" class="btn btn-dark">Send</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
 {%endblock%}
