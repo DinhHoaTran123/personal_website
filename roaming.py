@@ -1,16 +1,11 @@
 from flask import *
-from flask_mail import Mail, Message
-import json
 
-# Set up config
+import contact_page as contact
+
+from flask_mail import Mail
 app = Flask(__name__)
 
-# Social Media Link
-FACEBOOK_LINK = "https://www.facebook.com/thanhphat.tee/"
-INSTAGRAM_LINK = "https://www.instagram.com/thanhphat.tee/"
-LINKEDIN_LINK = "https://www.linkedin.com/in/teelam/"
 
-# Set up email
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'tee.thanhlam@gmail.com'
@@ -19,6 +14,12 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
+
+
+# Social Media Link
+FACEBOOK_LINK = "https://www.facebook.com/thanhphat.tee/"
+INSTAGRAM_LINK = "https://www.instagram.com/thanhphat.tee/"
+LINKEDIN_LINK = "https://www.linkedin.com/in/teelam/"
 
 @app.route("/")
 @app.route("/index")
@@ -56,24 +57,25 @@ def contact_page_form():
     name = request.form.get('Name')
     email = request.form.get('Email')
     message = request.form.get('Message')
-
+    respone_message = "Thanks for connecting with Lam. I will contact you back"
     # Get Contact info from sender
-    info = {
-
+    info = [{
         "Name": name,
         "Email": email,
         "Message": message
 
-    }
+    }]
 
-    # Write contact info into JSON file, named contact.json
-    with open("contact.json", "a") as fp:
-        json.dump(info, fp)
+    #Headers for csv file
+    headers = ["Name","Email","Message"]
+
+    #Write to CSV file
+    contact.append_to_csv("contact.csv",headers,info)
 
     # Send confirmation email with email and body (message)
-    send_confirmation_email(email, "Thanks for connecting with Lam. I will contact you")
+    contact.send_confirmation_email(email, respone_message)
 
-    return render_template("form_success.html")
+    return render_template('form_success.html')
 
 
 @app.route("/social-media-facebook")
@@ -89,14 +91,6 @@ def redirect_instagram():
 @app.route("/social-media-linkedin")
 def redirect_linkedin():
     return redirect(LINKEDIN_LINK)
-
-
-# Send confirmation email
-def send_confirmation_email(email, message):
-    msg = Message("Thanks for reaching out", sender="tee.thanhlam@gmail.com", recipients=[email])
-    msg.body = message
-    mail.send(msg)
-
 
 if __name__ == "__main__":
     app.run(debug=True)

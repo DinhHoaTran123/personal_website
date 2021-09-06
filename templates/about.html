@@ -1,6 +1,29 @@
 {% extends "base.html" %}
 {% block title %}About {%endblock%}
+{% block head %} 
+<link rel="stylesheet" href="{{ url_for('static',
+    filename='css/custom_css/about.css') }}">
 
+{%endblock%}
 {% block content %}
-<h1> Test About</h1>
+<div class="row">
+    <div class="col-sm">Vertical Image
+        <img src="{{ url_for('static',filename = 'images/vertical.jpg') }}" class='img-responsive'>
+
+    </div>
+    <div class="col-sm">About
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend nulla ut euismod ullamcorper. Ut a dui at erat iaculis fringilla. 
+            Integer at ipsum quis eros aliquet semper. Pellentesque tempus lacinia elit. In egestas diam lacus, non pretium est cursus in. Ut ornare dolor nec diam malesuada laoreet. 
+            Suspendisse mollis faucibus eros nec condimentum. Maecenas laoreet ac tellus non tempor. Vivamus euismod molestie sodales. 
+            Pellentesque ac ultrices lacus, at ornare mi. Nam vitae purus nibh. Donec sed ipsum maximus, tempor tortor quis, accumsan turpis.
+            
+        </p>
+
+    </div>
+    
+    <div class="col-sm">
+        <a>
+    </div>
+  </div>
 {%endblock%}
