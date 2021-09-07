@@ -52,7 +52,7 @@ def redirect_form_success():
     return render_template("form_success.html")
 
 
-@app.route("/contact", methods=['POST'])
+@app.route("/contact", methods=['POST','GET'])
 def contact_page_form():
     name = request.form.get('Name')
     email = request.form.get('Email')

@@ -6,24 +6,72 @@
 
 {%endblock%}
 {% block content %}
-<div class="row">
-    <div class="col-sm">Vertical Image
-        <img src="{{ url_for('static',filename = 'images/vertical.jpg') }}" class='img-responsive'>
+<div>
 
-    </div>
-    <div class="col-sm">About
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend nulla ut euismod ullamcorper. Ut a dui at erat iaculis fringilla. 
-            Integer at ipsum quis eros aliquet semper. Pellentesque tempus lacinia elit. In egestas diam lacus, non pretium est cursus in. Ut ornare dolor nec diam malesuada laoreet. 
-            Suspendisse mollis faucibus eros nec condimentum. Maecenas laoreet ac tellus non tempor. Vivamus euismod molestie sodales. 
-            Pellentesque ac ultrices lacus, at ornare mi. Nam vitae purus nibh. Donec sed ipsum maximus, tempor tortor quis, accumsan turpis.
-            
-        </p>
 
+    <div class="container">
+        <div>
+            <h2 style="text-align: center;">About me</h2>
+            <div class="row">
+                <div class="col">
+                    <img src="{{ url_for('static', filename='images/vertical1.jpg') }}" class="img-responsive" >
+                </div>
+
+                <div class="col">
+                   <p>
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quasi reiciendis sit fuga iusto possimus magnam dolore perferendis ab a suscipit voluptate officiis, iure minus atque nemo, dolores voluptatibus nulla.
+                   </p>
+
+                </div>
+        
+            </div>
+        </div>
+        <div>
+            <h2 style="text-align: center;">Education</h2>
+            <div class="row">
+                <div class="col">
+                    <img src="https://humber.ca/brand/sites/default/files/logos/Primary_Logo/Humber_Logo_Blue_and_Gold.png" class="img-responsive" >
+                </div>
+
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut eos tenetur sit error quam libero cumque labore ipsa fuga non aliquam, atque perspiciatis quasi, odit molestias magnam voluptatibus quos.</p>
+
+                </div>
+        
+            </div>
+        </div>
+        <div>
+            <h2 style="text-align: center;">Passion</h2>
+            <div class="row">
+                
+
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut eos tenetur sit error quam libero cumque labore ipsa fuga non aliquam, atque perspiciatis quasi, odit molestias magnam voluptatibus quos.</p>
+
+                </div>
+                <div class="col">
+                    <img src="{{ url_for('static', filename='images/square1.jpg') }}" class="img-responsive" >
+                </div>
+        
+            </div>
+        </div>
+        
+        <div>
+            <h2 style="text-align: center;">Random Facts</h2>
+            <div class="row">
+                <div class="col">
+                    <img src="https://humber.ca/brand/sites/default/files/logos/Primary_Logo/Humber_Logo_Blue_and_Gold.png" class="img-responsive" >
+                </div>
+
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut eos tenetur sit error quam libero cumque labore ipsa fuga non aliquam, atque perspiciatis quasi, odit molestias magnam voluptatibus quos.</p>
+
+                </div>
+        
+            </div>
+        </div>
     </div>
     
-    <div class="col-sm">
-        <a>
-    </div>
-  </div>
+</div>
+
 {%endblock%}

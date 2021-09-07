@@ -21,5 +21,7 @@ def append_to_csv(filename,headers,detail):
 #Check if file is empty or not
 def is_empty(filename):
     return os.stat(filename).st_size == 0
+    
+
 
 
